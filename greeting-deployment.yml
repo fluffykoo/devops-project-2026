@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: myservice
+  name: greeting-service
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: myservice
+      app: greeting-service
   template:
     metadata:
       labels:
-        app: myservice
+        app: greeting-service
     spec:
       containers:
-        - image: efrei/myservice:1
+        - image: oumou23/greeting-service:1.0
           imagePullPolicy: IfNotPresent
-          name: myservice
+          name: greeting-service
       restartPolicy: Always
